@@ -49,3 +49,63 @@ Select a Sustainable Development Goal (SDG) that resonates with you and develop 
 - Excel workbook with data analysis and dashboard
 - Integration documentation
 - Pitch deck presentation
+
+
+
+BIAKOLO SUBMISSION
+
+
+Project Proposal: SDG 3 - Good Health and Well-being
+Problem Definition:
+Maternal Mortality Rate: Despite advancements in healthcare, maternal mortality remains a significant challenge in many regions. This project aims to analyze factors contributing to maternal mortality and identify potential interventions through data-driven insights.
+
+Database Design:
+Entities:
+
+Patient
+Pregnancy
+Delivery
+Infant
+HealthcareFacility
+Staff
+Relationships:
+
+A Patient can have multiple Pregnancies.
+A Pregnancy results in a Delivery.
+A Delivery results in an Infant.
+A Delivery occurs at a HealthcareFacility and is attended by Staff.
+SQL Schema:
+
+SQL
+CREATE TABLE Patient (
+    patient_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    age INT,
+    address VARCHAR(255)
+);
+
+CREATE TABLE Pregnancy (
+    pregnancy_id INT PRIMARY KEY,
+    patient_id INT,
+    start_date DATE,
+    end_date DATE,
+    FOREIGN KEY (patient_id) REFERENCES Patient(patient_id)
+);
+
+-- Similar tables for Delivery, Infant, HealthcareFacility, and Staff
+ 
+
+Data Analysis:
+Identify factors correlated with maternal mortality (e.g., age, location, education, healthcare access).
+Analyze trends in maternal mortality rates over time.
+Determine the impact of different healthcare interventions on maternal mortality.
+Excel Dashboard:
+Overview of maternal mortality rate by region.
+Distribution of maternal age, education level, and other relevant factors.
+Trends in maternal mortality over time.
+Comparison of maternal mortality rates across healthcare facilities.
+Potential Challenges and Solutions:
+Data Quality: Ensure data accuracy and completeness through data cleaning and validation.
+Privacy: Protect patient data through anonymization and encryption.
+Data Availability: Access to comprehensive and reliable data might be limited. Explore alternative data sources or partnerships.
+By effectively addressing these challenges, this project can provide valuable insights into reducing maternal mortality and contribute to achieving SDG 3.
